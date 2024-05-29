@@ -12,14 +12,10 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { createProject } from "@/app/lib/actions";
 
 export default function Form() {
-  const initialState = {
-    errors: {},
-    message: "",
-  };
-  const [state, action] = useFormState(createProject, initialState);
+  const [state, dispatch] = useFormState(createProject, { message: "" });
 
   return (
-    <form action={action}>
+    <form action={dispatch}>
       <div>{state.message}</div>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* What is your title */}
