@@ -12,7 +12,10 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { createProject } from "@/app/lib/actions";
 
 export default function Form() {
-  const initialState = { message: null, errors: {} };
+  const initialState = {
+    errors: {},
+    message: "",
+  };
   const [state, action] = useFormState(createProject, initialState);
 
   return (

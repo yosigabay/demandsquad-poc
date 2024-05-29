@@ -43,5 +43,8 @@ export async function createProject(prevState: State, formData: FormData) {
     };
   }
 
-  return null;
+  return {
+    errors: null,
+    message: "Form data processed",
+ };
 }
