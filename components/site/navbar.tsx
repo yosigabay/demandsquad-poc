@@ -56,14 +56,16 @@ export const Navbar = () => {
         >
           <SignedOut>
             <NavbarItem className="hidden md:flex">
-              <SignInButton
-                className={buttonStyles({
-                  color: "primary",
-                  radius: "full",
-                  variant: "shadow",
-                })}
-              >
-                Sign In
+              <SignInButton>
+                <Button
+                  className={buttonStyles({
+                    color: "primary",
+                    radius: "full",
+                    variant: "shadow",
+                  })}
+                >
+                  Sign In
+                </Button>
               </SignInButton>
             </NavbarItem>
             <NavbarItem>
