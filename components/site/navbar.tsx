@@ -10,7 +10,13 @@ import { Button } from "@nextui-org/button";
 import { button as buttonStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  SignUpButton,
+} from "@clerk/nextjs";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -27,7 +33,7 @@ export const Navbar = () => {
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => ( 
+          {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
@@ -62,14 +68,16 @@ export const Navbar = () => {
             </SignInButton>
           </NavbarItem>
           <NavbarItem>
-            <Button
-              className={buttonStyles({
-                radius: "full",
-                variant: "bordered",
-              })}
-            >
-              Sign Up
-            </Button>
+            <SignUpButton>
+              <Button
+                className={buttonStyles({
+                  radius: "full",
+                  variant: "bordered",
+                })}
+              >
+                Sign Up
+              </Button>
+            </SignUpButton>
           </NavbarItem>
         </SignedOut>
         <SignedIn>

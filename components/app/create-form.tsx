@@ -12,7 +12,10 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { createProject } from "@/app/lib/actions";
 
 export default function Form() {
-  const [state, dispatch] = useFormState(createProject, { message: "" });
+  const [state, dispatch] = useFormState(createProject, {
+    errors: "",
+    message: "",
+  });
 
   return (
     <form action={dispatch}>
@@ -35,7 +38,6 @@ export default function Form() {
           </div>
           <div aria-atomic="true" aria-live="polite" id="customer-error" />
         </div>
-
         {/* company website url */}
         <div className="mb-4">
           <label className="mb-2 block text-sm font-medium" htmlFor="website">
@@ -68,6 +70,7 @@ export default function Form() {
             radius: "full",
             variant: "bordered",
           })}
+          type="submit"
         >
           Create Project
         </Button>

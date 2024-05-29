@@ -1,4 +1,4 @@
-import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export function CreateProjectBtn() {
@@ -13,18 +13,7 @@ export function CreateProjectBtn() {
   );
 }
 
-export function UpdateInvoice({ id }: { id: string }) {
-  return (
-    <Link
-      className="rounded-md border p-2 hover:bg-gray-100"
-      href={`/dashboard/invoices/${id}/edit`}
-    >
-      <PencilIcon className="w-5" />
-    </Link>
-  );
-}
-
-export function DeleteInvoice({ id }: { id: string }) {
+export function DeleteProjectBtn({ id }: { id: string }) {
   //const deleteInvoiceWithId = deleteInvoice.bind(null, id);
 
   return (
