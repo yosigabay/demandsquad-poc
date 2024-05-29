@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import {
-  CheckIcon,
-  ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
@@ -15,10 +13,11 @@ import { createProject } from "@/app/lib/actions";
 
 export default function Form() {
   const initialState = { message: null, errors: {} };
-  const [state, dispatch] = useFormState(createProject, initialState);
+  const [state, action] = useFormState(createProject, initialState);
 
   return (
-    <form action={dispatch}>
+    <form action={action}>
+      <div>{state.message}</div>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* What is your title */}
         <div className="mb-4">
