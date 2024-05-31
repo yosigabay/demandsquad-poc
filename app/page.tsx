@@ -11,15 +11,11 @@ export default function Page() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title()}>Make&nbsp;</h1>
-        <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
+        <h1 className={title()}>Get&nbsp;</h1>
+        <h1 className={title({ color: "violet" })}>proffesional&nbsp;</h1>
         <br />
-        <h1 className={title()}>
-          websites regardless of your design experience.
-        </h1>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </h2>
+        <h1 className={title()}>marketing agency, just for you.</h1>
+        <h2 className={subtitle({ class: "mt-4" })}>Autonomous, AI driven.</h2>
       </div>
 
       <div className="flex gap-3">
@@ -30,24 +26,16 @@ export default function Page() {
             radius: "full",
             variant: "shadow",
           })}
-          href={siteConfig.links.docs}
+          href="/docs"
         >
           Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
         </Link>
       </div>
 
       <div className="mt-8">
         <Snippet hideCopyButton hideSymbol variant="flat">
           <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
+            Get started by adding your <Code color="primary">domain</Code>
           </span>
         </Snippet>
       </div>
