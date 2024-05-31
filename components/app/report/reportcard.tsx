@@ -5,7 +5,6 @@ import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 
 import { AnalysisArtifcat } from "@/app/lib/definitions";
-import aa from "@/scripts/placeholder-report";
 
 export default async function Home({ data }: { data: AnalysisArtifcat }) {
   return (

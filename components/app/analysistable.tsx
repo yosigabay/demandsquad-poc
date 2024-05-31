@@ -1,18 +1,50 @@
-import React from "react";
-import { unstable_noStore as noStore } from "next/cache";
+"use client";
 
-import { DeleteProjectBtn } from "@/components/app/buttons";
-import AnalysisStatus from "@/components/app/analysisstatus";
+import { Table } from "@nextui-org/react";
+import { TableHeader } from "@nextui-org/react";
+import { TableColumn } from "@nextui-org/react";
+import { TableBody } from "@nextui-org/react";
+import { TableCell } from "@nextui-org/react";
+import { TableRow } from "@nextui-org/react";
+
 import { formatDateToLocal } from "@/app/lib/utils";
-import { fetchFilteredProjects } from "@/app/lib/data";
+import AnalysisStatus from "@/components/app/analysisstatus";
+import { DeleteProjectBtn } from "@/components/app/buttons";
+import { AnalysisTable } from "@/app/lib/definitions";
 
-export default async function AnalysisProjectsTable() {
-  noStore();
-  const projects = await fetchFilteredProjects();
-
+export default function AnalysisProjectsTable({
+  projects,
+}: {
+  projects: AnalysisTable[];
+}) {
   return (
     <div className="mt-6 flow-root">
-      <div className="inline-block min-w-full align-middle">
+      <Table aria-label="Example static collection table">
+        <TableHeader>
+          <TableColumn>Report Name</TableColumn>
+          <TableColumn>Domain</TableColumn>
+          <TableColumn>Date</TableColumn>
+          <TableColumn>Status</TableColumn>
+          <TableColumn>Actions</TableColumn>
+        </TableHeader>
+        <TableBody>
+          {projects.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>Dummy report Name</TableCell>
+              <TableCell>{row.website}</TableCell>
+              <TableCell>{formatDateToLocal(row.date)}</TableCell>
+              <TableCell>
+                <AnalysisStatus status={row.status} />
+              </TableCell>
+              <TableCell>
+                <DeleteProjectBtn id={row.id} />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+
+      {/*<div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
             {projects?.map((p) => (
@@ -86,7 +118,7 @@ export default async function AnalysisProjectsTable() {
             </tbody>
           </table>
         </div>
-      </div>
+        </div>*/}
     </div>
   );
 }

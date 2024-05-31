@@ -12,7 +12,7 @@ export async function fetchFilteredProjects() {
         SELECT
           analysis.id,
           analysis.website,
-          analysis.date,
+          to_char(analysis.date, 'MM/DD/YY') as date,
           analysis.status
         FROM 
           analysis
@@ -23,7 +23,6 @@ export async function fetchFilteredProjects() {
 
     return invoices.rows;
   } catch (error) {
-    console.error("Database Error:", error);
     throw new Error("Failed to fetch invoices.");
   }
 }

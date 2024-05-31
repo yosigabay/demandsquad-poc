@@ -1,3 +1,6 @@
+"use server";
+
+import { unstable_noStore as noStore } from "next/cache";
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { PlusIcon } from "@heroicons/react/24/outline";
@@ -5,8 +8,12 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import Table from "@/components/app/analysistable";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
+import { fetchFilteredProjects } from "@/app/lib/data";
 
 export default async function Home() {
+  noStore();
+  const projects = await fetchFilteredProjects();
+
   return (
     <section className="flex flex-col items-left justify-center gap-2 py-8 md:py-10">
       <div className="inline-block max-w-lg text-left justify-center">
@@ -40,8 +47,9 @@ export default async function Home() {
           Help
         </Link>
       </div>
+
       <div className="mt-4 items-center justify-between gap-2 md:mt-2">
-        {<Table />}
+        <Table projects={projects} />
       </div>
     </section>
   );
