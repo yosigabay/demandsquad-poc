@@ -56,6 +56,9 @@ export default function Home() {
           </CardHeader>
         </Card>
       </div>
+      <span className="text-small text-default-500 mt-5">
+        Comptetitors found through Semrush keywords search. this is available in Semrush/ahrefs API as well.
+      </span>
     </div>
   );
 }
