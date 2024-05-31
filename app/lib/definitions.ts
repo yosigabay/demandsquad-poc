@@ -18,6 +18,14 @@ export type AnalysisTable = {
   status: "pending" | "ready";
 };
 
+export type AnalysisArtifcat = {
+  projectid: string;
+  title: string;
+  subtitle: string;
+  image_url: string;
+  insight: number;
+};
+
 /*
 export type Customer = {
   id: string;

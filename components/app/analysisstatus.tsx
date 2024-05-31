@@ -1,4 +1,5 @@
 import { CheckIcon, ClockIcon } from "@heroicons/react/24/outline";
+import { Link } from "@nextui-org/react";
 import clsx from "clsx";
 
 export default function AnalysisStatus({ status }: { status: string }) {
@@ -8,7 +9,7 @@ export default function AnalysisStatus({ status }: { status: string }) {
         "inline-flex items-center rounded-full px-2 py-1 text-xs",
         {
           "bg-gray-100 text-gray-500": status === "pending",
-          "bg-green-500 text-white": status === "paid",
+          "bg-green-500 text-white": status === "ready",
         },
       )}
     >
@@ -20,7 +21,13 @@ export default function AnalysisStatus({ status }: { status: string }) {
       ) : null}
       {status === "ready" ? (
         <>
-          Ready
+          <Link
+            className="text-xs text-white"
+            href="/app/report"
+            underline="hover"
+          >
+            Ready
+          </Link>
           <CheckIcon className="ml-1 w-4 text-white" />
         </>
       ) : null}

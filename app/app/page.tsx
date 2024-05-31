@@ -19,19 +19,17 @@ export default async function Home() {
       </div>
       <div className="flex gap-3">
         <Link
-          isExternal
           className={buttonStyles({
             color: "primary",
             radius: "full",
             variant: "shadow",
           })}
-          href={siteConfig.links.docs}
+          href="/app/create"
         >
           <span className="hidden md:block">Create Project</span>{" "}
           <PlusIcon className="h-5 md:ml-4" />
         </Link>
         <Link
-          isExternal
           className={buttonStyles({
             color: "primary",
             radius: "full",

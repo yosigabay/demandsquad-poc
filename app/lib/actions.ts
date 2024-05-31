@@ -3,6 +3,8 @@
 import { z } from "zod";
 import { auth } from "@clerk/nextjs/server";
 import { sql } from "@vercel/postgres";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 const FormSchema = z.object({
   id: z.string(),
@@ -40,8 +42,11 @@ export async function createProject(prevState: FormState, formData: FormData) {
 
   await sql`
     INSERT INTO analysis (userid, website, date, status)
-    VALUES (${userId}, ${website}, ${date}, 'Pending')
+    VALUES (${userId}, ${website}, ${date}, 'pending')
   `;
+
+  revalidatePath("/app");
+  redirect("/app");
 
   return {
     errors: "",

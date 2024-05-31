@@ -55,7 +55,7 @@ export const Navbar = () => {
       >
         <SignedOut>
           <NavbarItem className="hidden md:flex">
-            <SignInButton>
+            <SignInButton forceRedirectUrl="/app">
               <Button
                 className={buttonStyles({
                   color: "primary",
