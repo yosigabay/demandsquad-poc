@@ -2,7 +2,13 @@ import { CheckIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@nextui-org/react";
 import clsx from "clsx";
 
-export default function AnalysisStatus({ status }: { status: string }) {
+export default function AnalysisStatus({
+  status,
+  id,
+}: {
+  status: string;
+  id: string;
+}) {
   return (
     <span
       className={clsx(
@@ -23,7 +29,7 @@ export default function AnalysisStatus({ status }: { status: string }) {
         <>
           <Link
             className="text-xs text-white"
-            href="/app/report"
+            href={`/app/report/${id}/view`}
             underline="hover"
           >
             Ready

@@ -7,7 +7,7 @@ import Summary from "@/components/app/report/summary";
 import GoogleAds from "@/components/app/report/googleads";
 import LinkedInAd from "@/components/app/report/linkedinads";
 
-export default function Home() {
+export default function Page({ params }: { params: { id: string } }) {
   return (
     <section className="flex flex-col items-left justify-center gap-2 py-8 md:py-10">
       <div className="inline-block text-left justify-center">

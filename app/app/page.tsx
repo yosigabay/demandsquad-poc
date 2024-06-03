@@ -15,7 +15,7 @@ export default async function Home() {
   const projects = await fetchFilteredProjects();
 
   return (
-    <section className="flex flex-col items-left justify-center gap-2 py-8 md:py-10">
+    <section className="flex flex-col items-left justify-center gap-2">
       <div className="inline-block max-w-lg text-left justify-center">
         <h1 className={title()}>My&nbsp;</h1>
         <h1 className={title({ color: "violet" })}>Projects&nbsp;</h1>
@@ -48,7 +48,7 @@ export default async function Home() {
         </Link>
       </div>
 
-      <div className="mt-4 items-center justify-between gap-2 md:mt-2">
+      <div className="items-center justify-between md:mt-0">
         <Table projects={projects} />
       </div>
     </section>

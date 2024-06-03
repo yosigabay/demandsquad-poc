@@ -20,6 +20,13 @@ type FormState = {
   message: string;
 };
 
+export async function deleteProject(reprotId: string) {
+  await sql`
+    DELETE FROM analysis WHERE id = ${reprotId}
+  `;
+  revalidatePath("/app");
+}
+
 export async function createProject(prevState: FormState, formData: FormData) {
   // Get the userId from auth() -- if null, the user is not signed in
   const { userId } = auth();

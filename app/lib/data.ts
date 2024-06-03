@@ -21,6 +21,10 @@ export async function fetchFilteredProjects() {
         ORDER BY analysis.date DESC
       `;
 
+    /*invoices.rows.forEach((i) => {
+      console.log(i.id);
+    });*/
+
     return invoices.rows;
   } catch (error) {
     throw new Error("Failed to fetch invoices.");
