@@ -3,6 +3,7 @@ import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { ClerkProvider } from "@clerk/nextjs";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import { Providers } from "./providers";
 
@@ -34,7 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID as string} />
+      </head>
       <ClerkProvider signInFallbackRedirectUrl="/app">
         <body
           className={clsx(

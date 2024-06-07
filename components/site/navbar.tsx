@@ -19,8 +19,8 @@ import {
 } from "@clerk/nextjs";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { Logo } from "@/components/icons";
+import { ThemeSwitch } from "@/components/site/theme-switch";
+import { Logo } from "@/components/site/icons";
 
 export const Navbar = () => {
   return (
