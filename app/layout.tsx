@@ -10,6 +10,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/site/navbar";
+import Script from "next/script";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -36,7 +37,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID as string} />
+        {/*<GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID as string} />*/}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-JTLREQBTRW" />
       </head>
       <ClerkProvider signInFallbackRedirectUrl="/app">
         <body
