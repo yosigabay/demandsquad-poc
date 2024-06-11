@@ -9,8 +9,8 @@ export default function Page() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title()}>Get&nbsp;</h1>
-        <h1 className={title({ color: "violet" })}>proffesional&nbsp;</h1>
+        <h1 className={title()}>Get a&nbsp;</h1>
+        <h1 className={title({ color: "violet" })}>professional&nbsp;</h1>
         <br />
         <h1 className={title()}>marketing agency, just for you.</h1>
         <h2 className={subtitle({ class: "mt-4" })}>Autonomous, AI driven.</h2>
